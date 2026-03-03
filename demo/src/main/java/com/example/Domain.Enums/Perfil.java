@@ -1,6 +1,6 @@
 package com.exeample.Domain.Enums;
 
-public class Perfil {
+public enum Perfil {
 
    ADMIN(0, "ROLE_ADM"), CLIENTE(1, "ROLE_CLI"), SUPORTE(2, "ROLE_SUP");
 
