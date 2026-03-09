@@ -3,7 +3,13 @@ package com.example.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
+
+@Entity
 public class Cliente extends Pessoa {
+
+    @OneToMany(mappedBy = "Cliente")
     private List<Chamados> Chamados = new ArrayList<>();
 
     public Cliente(){

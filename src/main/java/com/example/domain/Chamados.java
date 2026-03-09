@@ -1,20 +1,42 @@
 package com.example.domain;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 import com.example.domain.enums.Prioridade;
 import com.example.domain.enums.Status;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
-public class Chamados {
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
+@Entity
+public class Chamados implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id;
+
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate creatAt_open = LocalDate.now();
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate endAt_finish;
+
     private Prioridade Prioridade;
     private Status Status;
     private String Titulo;
     private String Descricao;
+
+    @ManyToOne
+    @JoinColumn(name = "Suporte_UID")
     private Suporte Suporte;
+    @ManyToOne
+    @JoinColumn(name = "Cliente_UID")
     private Cliente Cliente;
 
     @Override
