@@ -1,12 +1,12 @@
-package com.exeample.Domain.Enums;
+package com.example.domain.enums;
 
-public class Prioridade {
-   BAIXA(0, "BAIXA"), MEDIA(1, "MEDIA"), ALTA(2, "ALTA");
+public enum Status {
+   ABERTO(0, "ABERTO"), ANDAMENTO(1, "ANDAMENTO"), ENCERRADO(2, "ENCERRADO");
 
    private Integer Codigo;
    private String Descricao;
 
-   private Prioridade (Integer Codigo, String Descricao){
+   private Status (Integer Codigo, String Descricao){
     this.Codigo = Codigo;
     this.Descricao = Descricao;
    }
@@ -18,15 +18,15 @@ public class Prioridade {
         return Descricao;
    }
 
-   public static Prioridade toEnum(Integer cod){
+   public static Status toEnum(Integer cod){
     if (cod == null){
         return null;
     }
-    for (Prioridade x : Prioridade.values()){
+    for (Status x : Status.values()){
         if(cod.equals(x.getCodigo())){
             return x;
         }
     }
-    throw new IllegalArgumentException("Prioridade Inválida");
+    throw new IllegalArgumentException("Status Inválido");
    }
 }

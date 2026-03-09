@@ -1,4 +1,4 @@
-package com.exeample.Domain.Enums;
+package com.example.demo;
 
 public enum Perfil {
 
