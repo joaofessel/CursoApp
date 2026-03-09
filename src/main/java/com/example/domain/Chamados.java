@@ -1,6 +1,7 @@
 package com.example.domain;
 
 import java.time.LocalDate;
+
 import com.example.domain.enums.Prioridade;
 import com.example.domain.enums.Status;
 
@@ -41,7 +42,7 @@ public class Chamados {
         return true;
     }
 
-    public Chamados(Cliente Cliente, String Descricao, Integer Id, Proridade Prioridade, Status Status, Suporte Suporte, String Titulo) {
+    public Chamados(Cliente Cliente, String Descricao, Integer Id, Prioridade Prioridade, Status Status, Suporte Suporte, String Titulo) {
         this.Cliente = Cliente;
         this.Descricao = Descricao;
         this.Id = Id;
